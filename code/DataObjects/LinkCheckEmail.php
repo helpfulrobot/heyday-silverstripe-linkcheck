@@ -16,5 +16,4 @@ class LinkCheckEmail extends DataObject
         'Name' => 'Name',
         'Email' => 'Email'
     );
-
 }

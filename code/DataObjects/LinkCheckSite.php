@@ -58,7 +58,5 @@ class LinkCheckSite extends DataObject
         );
 
         return $fields;
-
     }
-
 }

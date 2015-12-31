@@ -34,9 +34,7 @@ class LinkCheckTask extends CliController
         exec("javac " . self::$crawler . " " . self::$linkStats . " && " . "javac " . self::$linkProject);
 
         if ($sites) {
-
             foreach ($sites as $site) {
-
                 echo "Checking " . $site->SiteURL . "\r\n";
 
                 $url = $site->SiteURL;
@@ -62,18 +60,14 @@ class LinkCheckTask extends CliController
                 $emailRecipients = $site->EmailRecipients();
 
                 if ($emailRecipients) {
-
                     foreach ($emailRecipients as $recipient) {
-
                         $filesCreated[$site->ID]['Email'][] = $recipient->Email;
-
                     }
                 }
             }
 
 
             foreach ($filesCreated as $file) {
-
                 Folder::find_or_make("LinkCheck" . DIRECTORY_SEPARATOR . $file['SiteName'] . DIRECTORY_SEPARATOR);
                 $pdfPath = "assets" . DIRECTORY_SEPARATOR . "LinkCheck" . DIRECTORY_SEPARATOR . $file['SiteName'] . DIRECTORY_SEPARATOR;
                 $pdfFullPath = BASE_PATH . DIRECTORY_SEPARATOR . $pdfPath;
@@ -114,11 +108,6 @@ class LinkCheckTask extends CliController
 
                 unlink($file['FilePath'] . $file['FileName']);
             }
-
         }
-
-
     }
-
-
 }

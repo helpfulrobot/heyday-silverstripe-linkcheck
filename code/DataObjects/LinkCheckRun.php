@@ -29,5 +29,4 @@ class LinkCheckRun extends DataObject
 
         return $fields;
     }
-
 }
